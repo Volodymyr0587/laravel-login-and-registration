@@ -42,10 +42,13 @@
             </div>
         </div>
         <!-- Button -->
+        @guest
         <div class="my-16">
-            <a href="#" class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+            <a href="{{ route('user.register') }}" class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
                 Get Started
             </a>
         </div>
+        @endguest
+
     </div>
 </section>

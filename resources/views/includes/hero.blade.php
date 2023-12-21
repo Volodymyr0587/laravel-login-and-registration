@@ -13,9 +13,12 @@
             </p>
             <div class="flex justify-center md:justify-start">
                 <!-- Button -->
-                <a href="#" class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
-                    Get Started
-                </a>
+                @guest
+                    <a href="{{ route('user.register') }}" class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+                        Get Started
+                    </a>
+                @endguest
+
             </div>
         </div>
         <!-- Image -->

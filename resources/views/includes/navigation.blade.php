@@ -18,16 +18,14 @@
         </div>
         <!-- Button -->
         @auth
-            <div class="hidden p-3 px-4 pt-2 text-white bg-brightRed rounded baseline md:block">
+            <div class="hidden p-3 px-4  hover:text-darkGrayishBlue md:block">
                 <x-dropdown-user-menu>
                     {{ auth()->user()->name }}
                 </x-dropdown-user-menu>
             </div>
         @else
-            <div class="hidden p-3 px-4 pt-2 text-white bg-brightRed rounded baseline md:block">
-
-                    <a href="{{ route('user.register') }}">Get Started</a>
-
+            <div class="hidden p-3 px-4 pt-2 text-white bg-brightRed rounded-full baseline md:block">
+                <a href="{{ route('user.register') }}">Get Started</a>
             </div>
         @endauth
 
