@@ -13,7 +13,7 @@
 
         <div x-show.transition="open" x-on:click.away="open = false"
             class="absolute right-0 w-40 mt-2 py-2 bg-white border rounded shadow-xl">
-            <a href="#"
+            <a href="{{ route('user.settings') }}"
                 class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white">Settings</a>
             <div class="py-2">
                 <hr>

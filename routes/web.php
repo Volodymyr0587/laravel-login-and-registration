@@ -32,3 +32,9 @@ Route::get('/login', [UserController::class, 'login'])->name('user.login');
 
 // Log In User
 Route::post('/authenticate', [UserController::class, 'authenticate'])->name('user.authenticate');
+
+// Show Settings Form
+Route::get('/settings', [UserController::class, 'settings'])->name('user.settings');
+
+// Update user
+Route::put('/update/{user}', [UserController::class, 'update'])->name('user.update');

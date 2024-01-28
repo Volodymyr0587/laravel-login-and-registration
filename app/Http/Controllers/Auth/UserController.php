@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\LoginUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -49,6 +50,27 @@ class UserController extends Controller
     public function login()
     {
         return view('users.login');
+    }
+
+    // Show Settings Form
+    public function settings()
+    {
+        $user = auth()->user();
+        return view('users.settings', compact('user'));
+    }
+
+    // Update user
+    public function update(UpdateUserRequest $request, User $user)
+    {
+        $formFields = $request->validated();
+
+        $user->update([
+            'name' => $formFields['name'],
+            'email' => $formFields['email'],
+            'password' => Hash::make($formFields['password']),
+        ]);
+
+        return redirect()->route('home')->with('message', 'User updated.');
     }
 
     // Authenticate User
